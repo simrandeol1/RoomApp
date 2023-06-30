@@ -10,6 +10,9 @@ import android.widget.TextView
 import com.example.roomapp.R
 import com.example.roomapp.data.Options
 
+/**
+ * custom adapter for spinners
+ */
 class CustomAdapter(private val context: Context, var dataSource: List<Options>) : BaseAdapter() {
 
     private val inflater: LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater

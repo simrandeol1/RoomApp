@@ -32,6 +32,10 @@ class DataModel(application: Application, dataStoreManager: DataStoreManager): A
         }
     }
 
+    /**
+     * get data from db/api depending on the last sync time
+     */
+
     fun getListData(){
         val now = System.currentTimeMillis()
         val last = dataSM.getFromDataStore()

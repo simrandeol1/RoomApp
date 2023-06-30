@@ -10,6 +10,9 @@ import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+/**
+ * Repository class for data
+ */
 class Repository(private val roomDao: RoomDao){
 
     private val baseUrl = "https://my-json-server.typicode.com/iranjith4/ad-assignment/"

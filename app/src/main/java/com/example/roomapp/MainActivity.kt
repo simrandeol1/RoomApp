@@ -35,6 +35,10 @@ class MainActivity : AppCompatActivity() {
         val otherSpinner: Spinner = findViewById(R.id.other)
         addSpinnerListeners(propertySpinner, roomSpinner, otherSpinner)
 
+        /**
+         * live data containing the facilities list
+         */
+
         viewModel.liveFacilitiesList.observe(this){
             listOfProperty = it[0].options
             listOfRoom = it[1].options
@@ -55,6 +59,10 @@ class MainActivity : AppCompatActivity() {
             checkValidity()
         }
     }
+
+    /**
+     * stores "facility_id+options_id" of the selected field from spinner
+     */
 
     private fun addSpinnerListeners(propertySpinner: Spinner, roomSpinner: Spinner, otherSpinner: Spinner){
         propertySpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -84,6 +92,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    /**
+     * maintains a hashmap with key,value = "facility_id+options_id"
+     */
+
     private fun processData(viewModel: DataModel){
         viewModel.liveExclusionsList.observe(this) { list ->
             list?.let {
@@ -93,6 +106,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    /**
+     * checks all the values selected with the hashmap, if any of the exclusions match, displays invalid choice
+     */
 
     private fun checkValidity(): Boolean{
         if(selectedProperty.equals("") || selectedRoom.equals("") || selectedOther.equals("")) {
