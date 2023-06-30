@@ -39,7 +39,6 @@ class Repository(private val roomDao: RoomDao){
             if(isSyncRequired)
                 setData()
             val data = roomDao.getAllDataSet()
-            Log.d("simsim",data.exclusions.toString())
             facilitiesList.postValue(data.facilities)
             exclusionsList.postValue(data.exclusions)
         }

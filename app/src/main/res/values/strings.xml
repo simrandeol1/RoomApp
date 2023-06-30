@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RoomApp</string>
+    <string name="check_validity">Check Validity</string>
 </resources>
