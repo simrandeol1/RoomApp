@@ -10,7 +10,7 @@ import android.widget.TextView
 import com.example.roomapp.R
 import com.example.roomapp.data.Options
 
-class CustomAdapter(val context: Context, var dataSource: List<Options>) : BaseAdapter() {
+class CustomAdapter(private val context: Context, var dataSource: List<Options>) : BaseAdapter() {
 
     private val inflater: LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 

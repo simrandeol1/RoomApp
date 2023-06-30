@@ -8,7 +8,6 @@ import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.roomapp.adapter.CustomAdapter
-import com.example.roomapp.data.Facilities
 import com.example.roomapp.data.Options
 import com.example.roomapp.viewmodel.DataModel
 import com.google.android.material.snackbar.BaseTransientBottomBar.LENGTH_SHORT
@@ -24,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private var listOfRoom: List<Options> = listOf()
     private var listOfOther: List<Options> = listOf()
     private lateinit var root: View
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -63,7 +63,6 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onNothingSelected(parentView: AdapterView<*>?) {
-                // your code here
             }
         }
 
@@ -73,7 +72,6 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onNothingSelected(parentView: AdapterView<*>?) {
-                // your code here
             }
         }
 
@@ -83,7 +81,6 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onNothingSelected(parentView: AdapterView<*>?) {
-                // your code here
             }
         }
     }

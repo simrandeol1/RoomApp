@@ -1,6 +1,5 @@
 package com.example.roomapp.repository
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.example.roomapp.data.Exclusions
 import com.example.roomapp.data.Facilities
@@ -8,14 +7,12 @@ import com.example.roomapp.interfaces.RoomApi
 import com.example.roomapp.interfaces.RoomDao
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class Repository(private val roomDao: RoomDao){
 
-    val baseUrl = "https://my-json-server.typicode.com/iranjith4/ad-assignment/"
-
+    private val baseUrl = "https://my-json-server.typicode.com/iranjith4/ad-assignment/"
 
     private lateinit var roomApi: RoomApi
 
@@ -29,7 +26,7 @@ class Repository(private val roomDao: RoomDao){
             .build().create(RoomApi::class.java)
     }
 
-    suspend fun setData(){
+    private suspend fun setData(){
         val result = roomApi.getFacilities()
         roomDao.insertItems(result.body())
     }
